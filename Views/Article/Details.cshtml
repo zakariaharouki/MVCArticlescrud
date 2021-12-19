@@ -1,0 +1,82 @@
+﻿@model Article
+   
+    <h1>Article View</h1>
+    <a class="btn btn-dark" asp-action="Create">Create Article</a>
+    	<a class="btn btn-dark" asp-area="" asp-controller="Article" asp-action="index">
+                                Back
+                            </a>
+@*    @foreach(var item in Model)
+{
+    @Html.DisplayFor(modelitem => item.Title)
+    @Html.DisplayFor(modelitem => item.image)
+    @Html.DisplayFor(modelitem => item.Body)
+    @Html.DisplayFor(modelitem => item.Summary)
+    @Html.DisplayFor(modelitem => item.Date)
+
+}*@
+<div class="row">
+    <div class="col-1">
+        <span>  ID :</span>
+
+    </div>
+    <div class="col-1">
+        <span id="Id">@Html.DisplayFor(model=>model.ID)</span>
+
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-1">
+        <span>Title :</span>
+
+    </div>
+    <div class="col-1">
+        <span>@Html.DisplayFor(model=>model.Title)</span>
+
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-1">
+        <span>Body :</span>
+
+    </div>
+    <div class="col-1">
+        <span>@Html.DisplayFor(model=>model.Body)</span>
+
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-1">
+        <span>Summary :</span>
+
+    </div>
+    <div class="col-1">
+        <span>@Html.DisplayFor(model=>model.Summary)</span>
+
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-1">
+        <span>Image :</span>
+
+    </div>
+    <div class="col-1">
+        <span>@Html.DisplayFor(model=>model.image)</span>
+
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-1">
+        <span>Date :</span>
+
+    </div>
+    <div class="col-1">
+        <span>@Html.DisplayFor(model=>model.Date)</span>
+
+    </div>
+</div>
+

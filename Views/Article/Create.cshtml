@@ -1,0 +1,46 @@
+﻿@model Article
+@*
+@{
+	if (Model is null)
+	{
+		ViewData["Title"] = "Create";
+		<h1>Create Article</h1>
+	}
+	else
+	{
+		ViewData["Title"] = "Edit";
+		<h1>Edit Article</h1>
+	}
+}*@
+@{ViewBag.Title= Model != null ? "Edit" : "Create";}
+<h1>@ViewBag.Title Article</h1>
+
+<form asp-action=@ViewBag.Title>
+
+	<div asp-validation-summary=All>
+		
+	</div>
+	<label asp-for="ID" class="control-label"></label>
+    <input asp-for="ID" class="form-control" readonly/>
+
+	<label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control" />
+
+	<label asp-for="Body" class="control-label"></label>
+    <textarea asp-for="Body" class="form-control" type="text" rows="5"></textarea>
+
+	<label asp-for="Summary" class="control-label"></label>
+    <textarea  asp-for="Summary" class="form-control" type="text" rows="5" ></textarea>
+
+	<label asp-for="image" class="control-label"></label>
+    <input asp-for="image" class="form-control" type="file" />
+
+
+	<label asp-for="Date" class="control-label"></label>
+    <input asp-for="Date" class="form-control" type="date" />
+	<br />
+	<input type="submit" value="Save" class="btn btn-primary" />
+	<a class="btn btn-dark" asp-area="" asp-controller="Article" asp-action="index">
+                                Back
+                            </a>
+</form>

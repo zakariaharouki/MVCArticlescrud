@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Article>
+   
+    <h1>Article View</h1>
+    <a class="btn btn-dark" asp-action="Create">Create Article</a>
+@*    @foreach(var item in Model)
+{
+    @Html.DisplayFor(modelitem => item.Title)
+    @Html.DisplayFor(modelitem => item.image)
+    @Html.DisplayFor(modelitem => item.Body)
+    @Html.DisplayFor(modelitem => item.Summary)
+    @Html.DisplayFor(modelitem => item.Date)
+
+}*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Date)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem=> item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=> item.image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=> item.Date)
+            </td>
+            <td>
+                 @Html.ActionLink("Edit","Edit",new{id=item.ID})
+                 @Html.ActionLink("Delete ","Delete",new{id=item.ID},new{onclick="return confirm('Are You sure you want to delete this record');"})
+                 @Html.ActionLink("Details","Details",new{id=item.ID})
+            </td>
+          
+                 
+           
+        </tr>    
+        }
+        
+    </tbody>
+</table>
+
